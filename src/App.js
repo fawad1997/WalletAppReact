@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Dashboard from './components/dashboard/Dashboard';
 import CreateWallet from './components/dashboard/dashboardoperations/CreateWallet';
+import NotFound from './components/shared/NotFound';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" exact component={Welcome} />
         <Route path="/dashboard" exact component={Dashboard} />
         <Route path="/createwallet" exact component={CreateWallet} />
+        <Route path="/" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );

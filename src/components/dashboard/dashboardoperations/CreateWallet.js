@@ -28,7 +28,7 @@ class CreateWallet extends Component {
         }
         axios.post('http://localhost:8080/wallet', newWallet)
             .then((res) => {
-                alert("Success")
+                this.props.history.push('/dashboard')
             }).catch((err) => {
                 alert("Error")
             })
