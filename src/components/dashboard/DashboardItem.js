@@ -31,11 +31,11 @@ class DashboardItem extends Component {
                                         <i className="fa fa-flag-checkered pr-1"> View Transactions </i>
                                     </li>
                                 </a>
-                                <a href="walletForm.html">
+                                <Link to={`/updatewallet/${wallet.id}`}>
                                     <li className="list-group-item update text-info">
                                         <i className="fa fa-edit pr-1"> Update Account Info</i>
                                     </li>
-                                </a>
+                                </Link>
                                 <Link to="/dashboard" onClick={()=>this.deleteBtnClick()}>
                                     <li className="list-group-item delete text-danger">
                                         <i className="fa fa-minus-circle pr-1"> Delete Account</i>
