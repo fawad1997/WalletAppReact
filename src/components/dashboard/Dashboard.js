@@ -12,6 +12,7 @@ class Dashboard extends Component {
     render() {
         const wallets = this.props.wallets
         const walletComponent = wallets.map(wallet=>(<DashboardItem key={wallet.id} wallet={wallet} />))
+
         return (
             <div className="projects">
                 <div className="container">

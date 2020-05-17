@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {GET_ERRORS, GET_WALLETS} from './types'
+import {GET_ERRORS, GET_WALLETS, DELETE_WALLET} from './types'
 
 export const createWallet = (newWallet, history) => async dispath => {
     await axios.post('http://localhost:8080/wallet', newWallet)
@@ -14,5 +14,12 @@ export const getWallets = () => async dispath => {
     await axios.get('http://localhost:8080/wallet')
         .then((res) => {
             dispath({type:GET_WALLETS,payload:res.data})
+        })
+}
+
+export const deleteWallet = (id) => async dispath => {
+    await axios.delete(`http://localhost:8080/wallet/${id}`)
+        .then((res) => {
+            dispath({type:DELETE_WALLET,payload:id})
         })
 }
