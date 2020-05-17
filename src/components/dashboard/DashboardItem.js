@@ -2,17 +2,19 @@ import React, { Component } from 'react'
 
 class DashboardItem extends Component {
     render() {
+        const wallet = this.props.wallet
         return (
             <div className="container">
                 <div className="card card-body bg-light mb-3">
                     <div className="row" >
                         <div className="col-lg-4 col-md-3 col-6">
-                            <h3>UBL Account</h3>
-                            <p>Account Number: 1234-1234-1234-1234</p>
+                            <h3>{wallet.name}</h3>
+                            <p>Account Number: {wallet.accountNumber}</p>
+                            <p>{wallet.description}</p>
                         </div>
                         <div className="col-lg-4 col-md-3 col-6 text-center">
                             <h3>Balance</h3>
-                            <h1>Rs. 27000</h1>
+                            <h1>Rs. {wallet.currentBalance}</h1>
                         </div>
                         <div className="col-md-4 col-12 d-lg-block">
                             <ul className="list-group">
